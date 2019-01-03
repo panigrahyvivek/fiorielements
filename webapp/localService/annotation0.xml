@@ -28,6 +28,218 @@
 	</edmx:Reference>
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotations Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="Label" String="GLOBAL_CTRL_V2"/>
+							<PropertyValue Property="ID" String="GLOBAL_CTRL_V2"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="General Information"/>
+										<PropertyValue Property="ID" String="GLOBAL_CTRL_V2GeneralInformation"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="System Administrative Data"/>
+										<PropertyValue Property="ID" String="GLOBAL_CTRL_V2SystemAdministrativeData"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SystemAdministrativeData"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Label" String="PARAM_VALUESs"/>
+							<PropertyValue Property="ID" String="PARAM_VALUES"/>
+							<PropertyValue Property="Target" AnnotationPath="to_PARAM_VALUES/@UI.LineItem"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SAP_Description"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="CLIENT_C"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="CTRL_TYP"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="APP_ID"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="BUS_SCN"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="GUID"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="SystemAdministrativeData">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SAP_CreatedDateTime"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SAP_CreatedByUser"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SAP_LastChangedDateTime"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="SAP_LastChangedByUser"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="GLOBAL_CTRL_V2"/>
+						<PropertyValue Property="TypeNamePlural" String="GLOBAL_CTRL_V2s"/>
+						<PropertyValue Property="Title">
+							<Record Type="UI.DataField">
+								<PropertyValue Property="Value" Path="GUID"/>
+							</Record>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="action1v2"/>
+							<PropertyValue Property="Action" String="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2_CDS_Entities/ZZ1_GLOBAL_CTRL_V2Action1v2"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="action1v2"/>
+							<PropertyValue Property="Action" String="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2_CDS_Entities/ZZ1_GLOBAL_CTRL_V2Action1v2"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CLIENT_C"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="CTRL_TYP"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="APP_ID"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="BUS_SCN"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="GUID"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType">
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="Label" String="PARAM_VALUES"/>
+							<PropertyValue Property="ID" String="PARAM_VALUES"/>
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Label" String="General Information"/>
+										<PropertyValue Property="ID" String="PARAM_VALUESGeneralInformation"/>
+										<PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+					<Record>
+						<PropertyValue Property="Data">
+							<Collection>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_INDEX"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_NAME"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_VAL1"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_VAL2"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_VAL3"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_VAL4"/>
+								</Record>
+								<Record Type="UI.DataField">
+									<PropertyValue Property="Value" Path="PAR_COM"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record>
+						<PropertyValue Property="TypeName" String="PARAM_VALUES"/>
+						<PropertyValue Property="TypeNamePlural" String="PARAM_VALUESs"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="action2v2"/>
+							<PropertyValue Property="Action" String="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2_CDS_Entities/ZZ1_PARAM_VALUES_GLOBAL_CTRL_VAction2v2"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.LineItem">
+					<Collection>
+						<Record Type="UI.DataFieldForAction">
+							<PropertyValue Property="Label" String="action2v2"/>
+							<PropertyValue Property="Action" String="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2_CDS_Entities/ZZ1_PARAM_VALUES_GLOBAL_CTRL_VAction2v2"/>
+							<PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_INDEX"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_NAME"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_VAL1"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_VAL2"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_VAL3"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_VAL4"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="PAR_COM"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>
