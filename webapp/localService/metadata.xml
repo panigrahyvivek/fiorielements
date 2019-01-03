@@ -1,0 +1,122 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="https://wxv280-qex002.wdf.sap.corp:443/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='QEXCLNT002')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZZ1_GLOBAL_CTRL_V2_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="P_Scbo_UserType" sap:label="wrapper view for usr21" sap:content-version="1">
+				<Key><PropertyRef Name="name"/></Key><Property Name="name" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User"
+					sap:quickinfo="User Name in User Master Record"/><Property Name="description" Type="Edm.String" MaxLength="80" sap:label="Description"
+					sap:quickinfo="Description of the Technical User Account"/></EntityType>
+			<EntityType Name="ZZ1_APP_IDType" sap:label="APP_ID" sap:content-version="1">
+				<Key><PropertyRef Name="Code"/></Key><Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Description" sap:label=""
+					sap:quickinfo="GENERATED: Value of code list ZZ1_APP_ID"/><Property Name="Description" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase"/></EntityType>
+			<EntityType Name="ZZ1_BUS_SCNType" sap:label="BUS_SCN" sap:content-version="1">
+				<Key><PropertyRef Name="Code"/></Key><Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="20" sap:text="Description" sap:label=""
+					sap:quickinfo="GENERATED: Value of code list ZZ1_BUS_SCN"/><Property Name="Description" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase"/></EntityType>
+			<EntityType Name="ZZ1_CTRL_TYPEType" sap:label="CTRL_TYPE" sap:content-version="1">
+				<Key><PropertyRef Name="Code"/></Key><Property Name="Code" Type="Edm.String" Nullable="false" MaxLength="5" sap:text="Description" sap:label=""
+					sap:quickinfo="GENERATED: Value of code list ZZ1_CTRL_TYPE"/><Property Name="Description" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase"/></EntityType>
+			<EntityType Name="ZZ1_GLOBAL_CTRL_V2Type" sap:label="GLOBAL_CTRL_V2" sap:content-version="1">
+				<Key><PropertyRef Name="SAP_UUID"/></Key><Property Name="Action1v2_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/><Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/><Property Name="SAP_CreatedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:creatable="false"
+					sap:updatable="false"/><Property Name="SAP_CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_CreatedByUser_Text"
+					sap:label="Created By" sap:creatable="false" sap:updatable="false"/><Property Name="SAP_CreatedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description"
+					sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/><Property Name="SAP_LastChangedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed On" sap:creatable="false"
+					sap:updatable="false"/><Property Name="SAP_LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_LastChangedByUser_Text"
+					sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/><Property Name="SAP_LastChangedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description"
+					sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/><Property Name="CLIENT_C" Type="Edm.String" MaxLength="3" sap:label="CLIENT_C"/><Property Name="CTRL_TYP" Type="Edm.String" MaxLength="5" sap:text="CTRL_TYP_Text" sap:label="CTRL_TYP" sap:value-list="standard"/><Property Name="CTRL_TYP_Text" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:creatable="false" sap:updatable="false"/><Property Name="APP_ID" Type="Edm.String" MaxLength="10" sap:text="APP_ID_Text" sap:label="APP_ID" sap:value-list="standard"/><Property Name="APP_ID_Text" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:creatable="false" sap:updatable="false"/><Property Name="BUS_SCN" Type="Edm.String" MaxLength="20" sap:text="BUS_SCN_Text" sap:label="BUS_SCN" sap:value-list="standard"/><Property Name="BUS_SCN_Text" Type="Edm.String" MaxLength="60" sap:display-format="UpperCase" sap:creatable="false" sap:updatable="false"/><Property Name="GUID" Type="Edm.String" MaxLength="20" sap:label="GUID"/><NavigationProperty Name="to_APP_ID" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_F83CB3725EEBC741E924F9996F0AD14B"
+					FromRole="FromRole_assoc_F83CB3725EEBC741E924F9996F0AD14B" ToRole="ToRole_assoc_F83CB3725EEBC741E924F9996F0AD14B"/><NavigationProperty Name="to_BUS_SCN" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_EE9B3538848EE25AC18E83A8D74293D5"
+					FromRole="FromRole_assoc_EE9B3538848EE25AC18E83A8D74293D5" ToRole="ToRole_assoc_EE9B3538848EE25AC18E83A8D74293D5"/><NavigationProperty Name="to_CTRL_TYP" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_A39F14DDEEB875FB2B011CF416D06A74"
+					FromRole="FromRole_assoc_A39F14DDEEB875FB2B011CF416D06A74" ToRole="ToRole_assoc_A39F14DDEEB875FB2B011CF416D06A74"/><NavigationProperty Name="to_PARAM_VALUES" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_3AE0FAE581151837B5E5537DB218C648"
+					FromRole="FromRole_assoc_3AE0FAE581151837B5E5537DB218C648" ToRole="ToRole_assoc_3AE0FAE581151837B5E5537DB218C648"/><NavigationProperty Name="to_SAPSysAdminDataChangeUser" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_1438BCC082195FA249633AE8E3FF11C1"
+					FromRole="FromRole_assoc_1438BCC082195FA249633AE8E3FF11C1" ToRole="ToRole_assoc_1438BCC082195FA249633AE8E3FF11C1"/><NavigationProperty Name="to_SAPSysAdminDataCreateUser" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_90CA70225BEA8A2D02D59F6CB88F3119"
+					FromRole="FromRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119" ToRole="ToRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119"/></EntityType>
+			<EntityType Name="ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType" sap:label="PARAM_VALUES" sap:content-version="1">
+				<Key><PropertyRef Name="SAP_UUID"/></Key><Property Name="Action2v2_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/><Property Name="SAP_PARENT_UUID" Type="Edm.Guid" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/><Property Name="PAR_INDEX" Type="Edm.Decimal" Precision="5" Scale="0" sap:label="PAR_INDEX"/><Property Name="PAR_NAME" Type="Edm.String" MaxLength="20" sap:label="PAR_NAME"/><Property Name="PAR_VAL1" Type="Edm.String" MaxLength="60" sap:label="PAR_VAL1"/><Property Name="PAR_VAL2" Type="Edm.String" MaxLength="60" sap:label="PAR_VAL2"/><Property Name="PAR_VAL3" Type="Edm.String" MaxLength="60" sap:label="PAR_VAL3"/><Property Name="PAR_VAL4" Type="Edm.String" MaxLength="60" sap:label="PAR_VAL4"/><Property Name="PAR_COM" Type="Edm.String" MaxLength="255" sap:label="PAR_COM"/><NavigationProperty Name="to_GLOBAL_CTRL_V2" Relationship="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_3AE0FAE581151837B5E5537DB218C648"
+					FromRole="ToRole_assoc_3AE0FAE581151837B5E5537DB218C648" ToRole="FromRole_assoc_3AE0FAE581151837B5E5537DB218C648"/></EntityType>
+			<Association Name="assoc_EE9B3538848EE25AC18E83A8D74293D5" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_EE9B3538848EE25AC18E83A8D74293D5"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_BUS_SCNType" Multiplicity="0..1" Role="ToRole_assoc_EE9B3538848EE25AC18E83A8D74293D5"/></Association>
+			<Association Name="assoc_A39F14DDEEB875FB2B011CF416D06A74" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_A39F14DDEEB875FB2B011CF416D06A74"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_CTRL_TYPEType" Multiplicity="0..1" Role="ToRole_assoc_A39F14DDEEB875FB2B011CF416D06A74"/></Association>
+			<Association Name="assoc_3AE0FAE581151837B5E5537DB218C648" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_3AE0FAE581151837B5E5537DB218C648"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType" Multiplicity="*" Role="ToRole_assoc_3AE0FAE581151837B5E5537DB218C648"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_3AE0FAE581151837B5E5537DB218C648"><PropertyRef Name="SAP_UUID"/></Principal>
+					<Dependent Role="ToRole_assoc_3AE0FAE581151837B5E5537DB218C648"><PropertyRef Name="SAP_PARENT_UUID"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="assoc_1438BCC082195FA249633AE8E3FF11C1" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_1438BCC082195FA249633AE8E3FF11C1"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_1438BCC082195FA249633AE8E3FF11C1"/></Association>
+			<Association Name="assoc_90CA70225BEA8A2D02D59F6CB88F3119" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119"/></Association>
+			<Association Name="assoc_F83CB3725EEBC741E924F9996F0AD14B" sap:content-version="1"><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" Multiplicity="1" Role="FromRole_assoc_F83CB3725EEBC741E924F9996F0AD14B"/><End Type="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_APP_IDType" Multiplicity="0..1" Role="ToRole_assoc_F83CB3725EEBC741E924F9996F0AD14B"/></Association>
+			<EntityContainer Name="ZZ1_GLOBAL_CTRL_V2_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="P_Scbo_User" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.P_Scbo_UserType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZZ1_APP_ID" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_APP_IDType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZ1_BUS_SCN" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_BUS_SCNType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZ1_CTRL_TYPE" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_CTRL_TYPEType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/><EntitySet Name="ZZ1_GLOBAL_CTRL_V2" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" sap:searchable="true"
+				sap:content-version="1"/><EntitySet Name="ZZ1_PARAM_VALUES_GLOBAL_CTRL_V" EntityType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType"
+				sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_A39F14DDEEB875FB2B011CF416D06A74" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_A39F14DDEEB875FB2B011CF416D06A74"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_A39F14DDEEB875FB2B011CF416D06A74"/><End EntitySet="ZZ1_CTRL_TYPE" Role="ToRole_assoc_A39F14DDEEB875FB2B011CF416D06A74"/></AssociationSet>
+				<AssociationSet Name="assoc_EE9B3538848EE25AC18E83A8D74293D5" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_EE9B3538848EE25AC18E83A8D74293D5"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_EE9B3538848EE25AC18E83A8D74293D5"/><End EntitySet="ZZ1_BUS_SCN" Role="ToRole_assoc_EE9B3538848EE25AC18E83A8D74293D5"/></AssociationSet>
+				<AssociationSet Name="assoc_3AE0FAE581151837B5E5537DB218C648" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_3AE0FAE581151837B5E5537DB218C648"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_3AE0FAE581151837B5E5537DB218C648"/><End EntitySet="ZZ1_PARAM_VALUES_GLOBAL_CTRL_V" Role="ToRole_assoc_3AE0FAE581151837B5E5537DB218C648"/></AssociationSet>
+				<AssociationSet Name="assoc_90CA70225BEA8A2D02D59F6CB88F3119" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_90CA70225BEA8A2D02D59F6CB88F3119"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119"/><End EntitySet="P_Scbo_User" Role="ToRole_assoc_90CA70225BEA8A2D02D59F6CB88F3119"/></AssociationSet>
+				<AssociationSet Name="assoc_1438BCC082195FA249633AE8E3FF11C1" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_1438BCC082195FA249633AE8E3FF11C1"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_1438BCC082195FA249633AE8E3FF11C1"/><End EntitySet="P_Scbo_User" Role="ToRole_assoc_1438BCC082195FA249633AE8E3FF11C1"/></AssociationSet>
+				<AssociationSet Name="assoc_F83CB3725EEBC741E924F9996F0AD14B" Association="ZZ1_GLOBAL_CTRL_V2_CDS.assoc_F83CB3725EEBC741E924F9996F0AD14B"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZZ1_GLOBAL_CTRL_V2" Role="FromRole_assoc_F83CB3725EEBC741E924F9996F0AD14B"/><End EntitySet="ZZ1_APP_ID" Role="ToRole_assoc_F83CB3725EEBC741E924F9996F0AD14B"/></AssociationSet>
+				<FunctionImport Name="ZZ1_GLOBAL_CTRL_V2Action1v2" ReturnType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" EntitySet="ZZ1_GLOBAL_CTRL_V2"
+					m:HttpMethod="POST" sap:action-for="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type" sap:applicable-path="Action1v2_ac"><Parameter Name="SAP_UUID" Type="Edm.Guid" Mode="In"/></FunctionImport>
+				<FunctionImport Name="ZZ1_PARAM_VALUES_GLOBAL_CTRL_VAction2v2" ReturnType="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType"
+					EntitySet="ZZ1_PARAM_VALUES_GLOBAL_CTRL_V" m:HttpMethod="POST" sap:action-for="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_PARAM_VALUES_GLOBAL_CTRL_VType"
+					sap:applicable-path="Action2v2_ac"><Parameter Name="SAP_UUID" Type="Edm.Guid" Mode="In"/></FunctionImport>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type/GUID"><Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/></Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type/CTRL_TYP">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="CTRL_TYPE"/><PropertyValue Property="CollectionPath" String="ZZ1_CTRL_TYPE"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="CTRL_TYP"/><PropertyValue Property="ValueListProperty" String="Code"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Description"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type/APP_ID">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="APP_ID"/><PropertyValue Property="CollectionPath" String="ZZ1_APP_ID"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="APP_ID"/><PropertyValue Property="ValueListProperty" String="Code"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Description"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type/BUS_SCN">
+				<Annotation Term="Common.ValueList">
+					<Record><PropertyValue Property="Label" String="BUS_SCN"/><PropertyValue Property="CollectionPath" String="ZZ1_BUS_SCN"/><PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="Common.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="BUS_SCN"/><PropertyValue Property="ValueListProperty" String="Code"/></Record>
+								<Record Type="Common.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Description"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZZ1_GLOBAL_CTRL_V2_CDS.ZZ1_GLOBAL_CTRL_V2Type">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>GUID</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://wxv280-qex002.wdf.sap.corp:443/sap/opu/odata/sap/ZZ1_GLOBAL_CTRL_V2_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://wxv280-qex002.wdf.sap.corp:443/sap/opu/odata/sap/ZZ1_GLOBAL_CTRL_V2_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
